@@ -238,7 +238,7 @@ function App() {
                 <Lottie
                   animationData={Avatar}
                   loop={true}
-                  className="w-250 h-250 sm:w-350 sm:h-350 md:w-350 md:h-350 lg:w-[650px] lg:h-[400px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+                  className="w-250 h-250 sm:w-350 sm:h-350 md:w-350 md:h-350 lg:w-[650px] lg:h-[400px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
                 />
               </div>
             </motion.div>
