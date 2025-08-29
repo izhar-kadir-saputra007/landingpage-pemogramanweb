@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Reverted to HSL values for better compatibility */
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 222.2 84% 4.9%; /* #374151 */
+  --card: 60 9.1% 97.8%; /* #fefce8 */
+  --card-foreground: 222.2 84% 4.9%; /* #374151 */
+  --popover: 0 0% 100%; /* #ffffff */
+  --popover-foreground: 222.2 84% 4.9%; /* #374151 */
+  --primary: 32.1 94.6% 43.7%; /* #d97706 - amber-600 */
+  --primary-foreground: 0 0% 100%; /* #ffffff */
+  --secondary: 45 93.4% 47.5%; /* #f59e0b - amber-500 */
+  --secondary-foreground: 0 0% 100%; /* #ffffff */
+  --muted: 210 40% 98%; /* #f8fafc */
+  --muted-foreground: 222.2 84% 4.9%; /* #374151 */
+  --accent: 45 93.4% 47.5%; /* #f59e0b */
+  --accent-foreground: 222.2 84% 4.9%; /* #374151 */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 13% 91%; /* #e5e7eb */
+  --input: 220 14.3% 95.9%; /* #f9fafb */
+  --ring: 32.1 94.6% 43.7%; /* #d97706 */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 45 93.4% 47.5%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 45 93.4% 47.5%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Added smooth scrolling and custom animations for Vite */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
