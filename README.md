@@ -43,3 +43,6 @@ npm run dev
 http://localhost:5173
 
 
+## UJI COBA
+Untuk data uji cobanya dapat menggunakan file warga.csv yang telah kami sediakan
+Sebelum memulai, pastikan Anda sudah menginstal:
