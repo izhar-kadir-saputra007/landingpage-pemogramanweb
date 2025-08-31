@@ -1,17 +1,29 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import Toast from "./components/Toast.jsx"
 import "./index.css"
 import App from "./App.jsx"
+import Login from "./components/auth/Login.jsx"
+import Register from "./components/auth/Register.jsx"
+
+//admin
 import Admin from "./components/Admin/Admin.jsx"
 import Overview from "./components/Admin/Overview.jsx"
-import Ecommerce from "./components/Admin/Ecommerce.jsx"
-import Projects from "./components/Admin/Projects.jsx"
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
   {
     path: '/admin',
@@ -21,20 +33,14 @@ const router = createBrowserRouter([
         index: true,
         element: <Overview />,
       },
-      {
-        path: 'ecommerce',
-        element: <Ecommerce />,
-      },
-      {
-        path: 'projects',
-        element: <Projects />,
-      },
+      
     ],
   },
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Toast />
     <RouterProvider router={router} />
   </StrictMode>,
 )

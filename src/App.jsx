@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import {
   Menu,
@@ -21,6 +22,7 @@ import {
 } from "lucide-react";
 import RotatingText from "./components/RotatingText";
 import Avatar from "./assets/man-and-robot.json";
+import Robot from "./assets/robot-work.json";
 import { mark } from "framer-motion/client";
 
 function App() {
@@ -78,17 +80,12 @@ function App() {
                   Fitur
                 </a>
                 <a
-                  href="#pricing"
+                  href="#benefit"
                   className="text-foreground hover:text-primary transition-colors"
                 >
                   Kategori
                 </a>
-                <a
-                  href="#testimonials"
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  Testimoni
-                </a>
+
                 <a
                   href="#contact"
                   className="text-foreground hover:text-primary transition-colors"
@@ -99,12 +96,18 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <button className="text-foreground hover:text-primary transition-colors">
+              <Link
+                to="/login"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Sign In
-              </button>
-              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+              </Link>
+              <Link
+                to="/register"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
 
             <div className="md:hidden">
@@ -135,17 +138,12 @@ function App() {
                 Fitur
               </a>
               <a
-                href="#pricing"
+                href="#benefit"
                 className="block px-3 py-2 text-foreground hover:text-primary"
               >
                 Kategori
               </a>
-              <a
-                href="#testimonials"
-                className="block px-3 py-2 text-foreground hover:text-primary"
-              >
-                Testimoni
-              </a>
+
               <a
                 href="#contact"
                 className="block px-3 py-2 text-foreground hover:text-primary"
@@ -221,9 +219,6 @@ function App() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
                   Get Started <ArrowRight size={20} />
-                </button>
-                <button className="border border-border text-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-muted transition-colors flex items-center justify-center gap-2">
-                  <Play size={20} /> Watch Demo
                 </button>
               </div>
             </motion.div>
@@ -401,11 +396,14 @@ function App() {
                   : "opacity-0 -translate-x-8"
               }`}
             >
-              <img
-                src="/mobile-app-interface-showing-support-tickets-and-c.png"
-                alt="Mobile app interface"
-                className="w-full max-w-md mx-auto h-auto"
-              />
+               <div className="w-full flex justify-center">
+                <Lottie
+                  animationData={Robot}
+                  loop={true}
+                  className="w-250 h-250 sm:w-350 sm:h-350 md:w-350 md:h-350 lg:w-[650px] lg:h-[400px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                />
+              </div>
+            
             </motion.div>
 
             <motion.div
@@ -533,7 +531,7 @@ function App() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="kategori grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Kategori Masyarakat Miskin */}
             <motion.div
               id="miskin"
@@ -624,245 +622,11 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            id="testimonials-header"
-            data-animate
-            className={`text-center mb-16 transition-all duration-700 ${
-              isVisible["testimonials-header"]
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Pendapat Mereka tentang Kami
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Suara pengguna yang puas menggunakan layanan kami.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              id="testimonial-1"
-              data-animate
-              className={`bg-card p-6 rounded-2xl border border-border transition-all duration-700 ${
-                isVisible["testimonial-1"]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-card-foreground mb-6">
-                "Dengan <b>NeuroVolt</b>, distribusi bantuan sosial di desa kami
-                jadi lebih tepat sasaran. Data penerima bisa diverifikasi
-                otomatis oleh AI, mengurangi potensi salah sasaran."
-              </p>
-              <div className="flex items-center gap-3">
-                <img
-                  src="/professional-woman-diverse.png"
-                  alt="Rina Kurnia"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    Rina Kurnia
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    Kepala Desa, Sulawesi Tenggara
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              id="testimonial-2"
-              data-animate
-              className={`bg-card p-6 rounded-2xl border border-border transition-all duration-700 delay-200 ${
-                isVisible["testimonial-2"]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-card-foreground mb-6">
-                "Sistem ini memudahkan kami memantau penyaluran bantuan.
-                Notifikasi cepat dan laporan yang jelas sangat membantu di
-                lapangan."
-              </p>
-              <div className="flex items-center gap-3">
-                <img
-                  src="/professional-man.png"
-                  alt="Andi Saputra"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    Andi Saputra
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    Relawan Sosial
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              id="testimonial-3"
-              data-animate
-              className={`bg-card p-6 rounded-2xl border border-border transition-all duration-700 delay-400 ${
-                isVisible["testimonial-3"]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-card-foreground mb-6">
-                "Analisis data dari <b>NeuroVolt</b> memberi wawasan baru
-                tentang pola penerima bantuan. AI membantu pemerintah membuat
-                keputusan berbasis data, bukan sekadar asumsi."
-              </p>
-              <div className="flex items-center gap-3">
-                <img
-                  src="/professional-woman-smiling.png"
-                  alt="Dr. Maya Pratama"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    Dr. Maya Pratama
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    Peneliti Sosial
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="py-20 bg-neutral-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            id="newsletter"
-            data-animate
-            className={`transition-all duration-700 ${
-              isVisible["newsletter"]
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              Subscribe to get notified about update
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              By subscribing with your mail, you will accept our privacy policy
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500"
-              />
-              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-neutral-900 text-white py-12 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold text-primary mb-4">
-                NeuroVolt
-              </div>
-              <p className="text-gray-300">
-                Ultimate support system for leading agencies worldwide.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    API
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Status
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2024 Supportal. All rights reserved.</p>
+            <p>&copy; 2025 NeuroVolt. All rights reserved.</p>
           </div>
         </div>
       </footer>
