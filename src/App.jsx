@@ -178,10 +178,10 @@ function App() {
               transition={{ duration: 0.6 }}
               className="text-center lg:text-left"
             >
-              <h1 className="text-2xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
+              <h1 className="text-2xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
                 <span className="block">Seleksi & Monitoring Bantuan</span>
                 <span className="block text-primary">
-                  <div className="flex justify-center pt-6">
+                  <div className="flex justify-center md:justify-start pt-6">
                     <RotatingText
                       texts={[
                         "Tepat Sasaran dengan AI",
