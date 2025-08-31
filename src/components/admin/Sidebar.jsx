@@ -1,15 +1,15 @@
 "use client"
 
+import DashboardIcon from '@mui/icons-material/Dashboard'
+
 const Sidebar = ({ activeMenuItem, onMenuClick }) => {
   const sidebarItems = [
-    { icon: "📊", label: "Overview", path: "/admin" },
-    { icon: "🛒", label: "eCommerce", path: "/admin/ecommerce" },
-    { icon: "📁", label: "Projects", path: "/admin/projects" },
+    { icon: <DashboardIcon />, label: "Dashboard", path: "/admin" },
   ]
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 h-full sticky top-[76px]">
-      <nav className="p-4 space-y-2">
+    <aside className="w-64 bg-white border-r border-gray-200 h-screen fixed top-[43px] left-0 z-10">
+      <nav className="p-4 space-y-2 overflow-y-auto h-full">
         {sidebarItems.map((item, index) => (
           <button
             key={index}
@@ -20,9 +20,11 @@ const Sidebar = ({ activeMenuItem, onMenuClick }) => {
                 : "text-gray-600 hover:text-gray-800"
             }`}
           >
-            <span className="text-lg">{item.icon}</span>
+            <span className="text-gray-600">{item.icon}</span>
             <span className="font-medium">{item.label}</span>
-            {activeMenuItem === item.label && <div className="ml-auto w-2 h-2 bg-blue-500 rounded-full"></div>}
+            {activeMenuItem === item.label && (
+              <div className="ml-auto w-2 h-2 bg-blue-500 rounded-full"></div>
+            )}
           </button>
         ))}
       </nav>

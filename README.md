@@ -1,12 +1,45 @@
-# React + Vite
+# Frontend - React Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah bagian **Frontend** dari aplikasi, dibangun menggunakan **React + Vite** dengan styling **Tailwind CSS**.  
+Frontend ini terhubung ke backend melalui API dan menampilkan antarmuka pengguna yang responsif.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur
+- Dibangun dengan **React + Vite** (tanpa TypeScript).  
+- Styling menggunakan **Tailwind CSS**.  
+- Mendukung layout **responsif** (desktop, tablet, mobile).  
+- Komponen **reusable** untuk kemudahan pengembangan.  
+- Terintegrasi dengan backend melalui **API**.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Persyaratan
+Sebelum memulai, pastikan Anda sudah menginstal:
+- [Node.js](https://nodejs.org/) versi terbaru
+- [npm](https://www.npmjs.com/) (sudah termasuk di dalam Node.js)
+
+---
+
+## 📦 Instalasi
+ Clone repository ini:
+   ```bash
+   git clonehttps://github.com/izhar-kadir-saputra007/landingpage-pemogramanweb
+   cd nama-repo-frontend
+   ```
+---
+
+## Install semua dependencies:
+```bash
+npm install
+```
+
+## Menjalankan Development Server
+```bash
+npm run dev
+```
+
+## Akses Aplikasi
+http://localhost:5173
+
+

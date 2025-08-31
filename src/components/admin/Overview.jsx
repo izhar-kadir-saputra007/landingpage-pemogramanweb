@@ -55,7 +55,7 @@ const Overview = () => {
     // Refresh data setelah upload berhasil
     setTimeout(() => {
       fetchData()
-    }, 20000)
+    }, 2000)
   }
 
 
@@ -198,10 +198,7 @@ const statsCards = [
         </Alert>
       )}
 
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Overview</h1>
-        <p className="text-gray-600">Welcome to your overview dashboard</p>
-      </div>
+     
 
       {/* Stats Cards dengan data statistik warga */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -337,7 +334,7 @@ const statsCards = [
       </button>
     </div>
   )}
-</div>s
+</div>
     </div>
   )
 }

@@ -13,8 +13,7 @@ const Admin = () => {
   useEffect(() => {
     const pathToLabel = {
       "/admin": "Overview",
-      "/admin/ecommerce": "eCommerce",
-      "/admin/projects": "Projects"
+     
     }
     setActiveMenuItem(pathToLabel[location.pathname] || "Overview")
   }, [location.pathname])
@@ -31,22 +30,14 @@ const Admin = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">❄️</span>
-              </div>
-              <span className="font-semibold text-gray-800">SnowUI</span>
+             
+              <span className="font-semibold text-gray-800">NeuroVolt</span>
             </div>
             <nav className="flex space-x-6">
-              <button className="px-3 py-1 text-gray-600 hover:text-gray-800">Dashboards</button>
-              <button className="px-3 py-1 text-gray-800 border-b-2 border-blue-500">Overview</button>
+              <button className="px-3 py-1 text-gray-800 border-b-2 border-blue-500">Dashboards</button>
             </nav>
           </div>
-          <div className="flex items-center space-x-4">
-            <button className="p-2 hover:bg-gray-100 rounded-lg">🔍</button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">☀️</button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">🔔</button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">👤</button>
-          </div>
+          
         </div>
       </header>
 
