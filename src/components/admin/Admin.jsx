@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -21,6 +22,15 @@ const Admin = () => {
     navigate(path);
   };
 
+  const handleLogout = () => {
+    // Hapus token atau data autentikasi dari localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    
+    // Redirect ke halaman utama
+    navigate('/');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Fixed Header */}
@@ -36,6 +46,15 @@ const Admin = () => {
               </button>
             </nav>
           </div>
+          
+          {/* Tombol Logout di Header */}
+          <button
+            onClick={handleLogout}
+            className="flex items-center space-x-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200 border border-red-200"
+          >
+            <LogoutIcon className="text-red-500" fontSize="small" />
+            <span className="font-medium">Logout</span>
+          </button>
         </div>
       </header>
 
